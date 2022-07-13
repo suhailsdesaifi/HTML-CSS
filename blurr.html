@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="Suhail Saifi">
+		<meta name="keyword" content="HTML, CSS">
+		<meta name="discription" content="HTML, CSS makes happy!">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Blurr Code</title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			body{
+				min-height: 100vh;
+				width: 100%;
+				background-image: url(blurr1.jpg);
+				background-position: center;
+				background-size: cover;
+				align-items: center;
+				display: flex;
+				justify-content: space-around;
+			}
+			@media (max-width: 700px) {
+				body{
+					background-image: url(blurr2.jpg);
+					flex-direction: column;
+				}
+			}
+			.blur{
+				/*padding: 100px;*/
+				background-color: hsl(0 0% 100% / 0.1);
+				/*backdrop-filter: blur(1rem); */ /*this works for blur*/
+			}
+			/*if the code of line 33 dose'nt work then use line 36 code*/
+			@supports (backdrop-filter: blur(1rem)) {
+				.blur{
+					background-color: hsl(0 0% 100% /0.1);
+					backdrop-filter: blur(1rem);
+				}
+			}
+			h1{
+				color: skyblue;
+				padding: 100px;
+			}
+			@media (max-width: 700px) {
+				h1{
+					padding: 50px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="blur">
+			<h1>Hello</h1>
+		</div>
+	</body>
+</html>
